@@ -1,5 +1,5 @@
 {
-  "name": "react-color-fork",
+  "name": "react-color",
   "version": "2.19.3",
   "description": "A Collection of Color Pickers from Sketch, Photoshop, Chrome & more",
   "main": "lib/index.js",
