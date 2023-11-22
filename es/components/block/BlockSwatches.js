@@ -10,7 +10,8 @@ export var BlockSwatches = function BlockSwatches(_ref) {
   var colors = _ref.colors,
       onClick = _ref.onClick,
       onSwatchHover = _ref.onSwatchHover,
-      onResetBtnClick = _ref.onResetBtnClick;
+      onResetBtnClick = _ref.onResetBtnClick,
+      isBackgroundColorPicker = _ref.isBackgroundColorPicker;
 
   var styles = reactCSS({
     'default': {
@@ -46,7 +47,7 @@ export var BlockSwatches = function BlockSwatches(_ref) {
         }
       });
     }),
-    React.createElement(
+    isBackgroundColorPicker && React.createElement(
       'div',
       { onClick: function onClick() {
           return onResetBtnClick();

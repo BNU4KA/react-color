@@ -22,7 +22,9 @@ var Block = function Block(_ref) {
       className = _ref$className === undefined ? '' : _ref$className,
       onResetBtnClick = _ref.onResetBtnClick,
       value = _ref.color,
-      rest = _objectWithoutProperties(_ref, ['onChange', 'onSwatchHover', 'hex', 'colors', 'width', 'triangle', 'styles', 'className', 'onResetBtnClick', 'color']);
+      _ref$isBackgroundColo = _ref.isBackgroundColorPicker,
+      isBackgroundColorPicker = _ref$isBackgroundColo === undefined ? false : _ref$isBackgroundColo,
+      rest = _objectWithoutProperties(_ref, ['onChange', 'onSwatchHover', 'hex', 'colors', 'width', 'triangle', 'styles', 'className', 'onResetBtnClick', 'color', 'isBackgroundColorPicker']);
 
   var transparent = hex === 'transparent';
   var handleChange = function handleChange(hexCode, e) {
@@ -131,7 +133,7 @@ var Block = function Block(_ref) {
     React.createElement(
       'div',
       { style: styles.body },
-      React.createElement(BlockSwatches, { colors: colors, onClick: handleChange, onSwatchHover: onSwatchHover, onResetBtnClick: onResetBtnClick }),
+      React.createElement(BlockSwatches, { colors: colors, onClick: handleChange, onSwatchHover: onSwatchHover, onResetBtnClick: onResetBtnClick, isBackgroundColorPicker: isBackgroundColorPicker }),
       React.createElement(EditableInput, {
         style: { input: styles.input },
         value: hex,
