@@ -63,7 +63,7 @@ var Block = function Block(_ref) {
         height: '0px',
         borderStyle: 'solid',
         borderWidth: '0 10px 10px 10px',
-        borderColor: 'transparent transparent ' + hex + ' transparent',
+        borderColor: 'transparent transparent ' + (value === 'no background' ? '#fff' : hex) + ' transparent',
         position: 'absolute',
         top: '-10px',
         left: '50%',
