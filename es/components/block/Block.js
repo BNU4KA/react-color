@@ -76,6 +76,20 @@ export var Block = function Block(_ref) {
         borderRadius: '4px',
         padding: '0 7px',
         boxSizing: 'border-box'
+      },
+      noBackground: {
+        height: '110px',
+        background: '#fff',
+        borderRadius: '6px 6px 0 0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'relative'
+      },
+      noBackgroundlabel: {
+        fontSize: '18px',
+        color: '#000',
+        position: 'relative'
       }
     },
     'hide-triangle': {
@@ -84,6 +98,8 @@ export var Block = function Block(_ref) {
       }
     }
   }, passedStyles), { 'hide-triangle': triangle === 'hide' });
+
+  console.log({ hex: hex });
 
   return React.createElement(
     'div',

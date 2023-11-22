@@ -66,6 +66,20 @@ export const Block = ({ onChange, onSwatchHover, hex, colors, width, triangle,
         padding: '0 7px',
         boxSizing: 'border-box',
       },
+      noBackground: {
+        height: '110px',
+        background: '#fff',
+        borderRadius: '6px 6px 0 0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'relative',
+      },
+      noBackgroundlabel: {
+        fontSize: '18px',
+        color: '#000',
+        position: 'relative',
+      },
     },
     'hide-triangle': {
       triangle: {
@@ -73,6 +87,8 @@ export const Block = ({ onChange, onSwatchHover, hex, colors, width, triangle,
       },
     },
   }, passedStyles), { 'hide-triangle': triangle === 'hide' })
+
+  console.log({ hex });
 
   return (
     <div style={ styles.card } className={ `block-picker ${ className }` }>
