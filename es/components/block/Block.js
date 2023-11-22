@@ -129,7 +129,7 @@ export var Block = function Block(_ref) {
       'div',
       { style: styles.body },
       React.createElement(BlockSwatches, { colors: colors, onClick: handleChange, onSwatchHover: onSwatchHover, onResetBtnClick: onResetBtnClick, isBackgroundColorPicker: isBackgroundColorPicker }),
-      React.createElement(EditableInput, {
+      value !== 'no background' && React.createElement(EditableInput, {
         style: { input: styles.input },
         value: hex,
         onChange: handleChange

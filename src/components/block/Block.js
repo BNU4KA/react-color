@@ -115,11 +115,13 @@ export const Block = ({ onChange, onSwatchHover, hex, colors, width, triangle,
 
       <div style={ styles.body }>
         <BlockSwatches colors={ colors } onClick={ handleChange } onSwatchHover={ onSwatchHover } onResetBtnClick={ onResetBtnClick } isBackgroundColorPicker={ isBackgroundColorPicker } />
-        <EditableInput
-          style={{ input: styles.input }}
-          value={ hex }
-          onChange={ handleChange }
-        />
+        {value !== 'no background' && (
+          <EditableInput
+            style={{ input: styles.input }}
+            value={ hex }
+            onChange={ handleChange }
+          />
+        )}
       </div>
     </div>
   )
