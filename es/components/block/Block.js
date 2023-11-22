@@ -18,7 +18,9 @@ export var Block = function Block(_ref) {
       passedStyles = _ref$styles === undefined ? {} : _ref$styles,
       _ref$className = _ref.className,
       className = _ref$className === undefined ? '' : _ref$className,
-      onResetBtnClick = _ref.onResetBtnClick;
+      onResetBtnClick = _ref.onResetBtnClick,
+      _ref$value = _ref.value,
+      value = _ref$value === undefined ? '' : _ref$value;
 
   var transparent = hex === 'transparent';
   var handleChange = function handleChange(hexCode, e) {
@@ -99,7 +101,7 @@ export var Block = function Block(_ref) {
     }
   }, passedStyles), { 'hide-triangle': triangle === 'hide' });
 
-  console.log({ hex: hex });
+  console.log({ hex: hex, value: value });
 
   return React.createElement(
     'div',
