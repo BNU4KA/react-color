@@ -1,5 +1,3 @@
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import reactCSS from 'reactcss';
@@ -9,7 +7,7 @@ import * as color from '../../helpers/color';
 import { ColorWrap, EditableInput, Checkboard } from '../common';
 import BlockSwatches from './BlockSwatches';
 
-var Block = function Block(_ref) {
+export var Block = function Block(_ref) {
   var onChange = _ref.onChange,
       onSwatchHover = _ref.onSwatchHover,
       hex = _ref.hex,
@@ -23,8 +21,7 @@ var Block = function Block(_ref) {
       onResetBtnClick = _ref.onResetBtnClick,
       value = _ref.color,
       _ref$isBackgroundColo = _ref.isBackgroundColorPicker,
-      isBackgroundColorPicker = _ref$isBackgroundColo === undefined ? false : _ref$isBackgroundColo,
-      rest = _objectWithoutProperties(_ref, ['onChange', 'onSwatchHover', 'hex', 'colors', 'width', 'triangle', 'styles', 'className', 'onResetBtnClick', 'color', 'isBackgroundColorPicker']);
+      isBackgroundColorPicker = _ref$isBackgroundColo === undefined ? false : _ref$isBackgroundColo;
 
   var transparent = hex === 'transparent';
   var handleChange = function handleChange(hexCode, e) {
@@ -105,8 +102,6 @@ var Block = function Block(_ref) {
     }
   }, passedStyles), { 'hide-triangle': triangle === 'hide' });
 
-  console.log({ hex: hex, value: value, rest: rest });
-
   return React.createElement(
     'div',
     { style: styles.card, className: 'block-picker ' + className },
@@ -143,7 +138,6 @@ var Block = function Block(_ref) {
   );
 };
 
-export { Block };
 Block.propTypes = {
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   colors: PropTypes.arrayOf(PropTypes.string),
