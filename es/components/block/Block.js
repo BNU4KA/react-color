@@ -21,7 +21,8 @@ var Block = function Block(_ref) {
       _ref$className = _ref.className,
       className = _ref$className === undefined ? '' : _ref$className,
       onResetBtnClick = _ref.onResetBtnClick,
-      rest = _objectWithoutProperties(_ref, ['onChange', 'onSwatchHover', 'hex', 'colors', 'width', 'triangle', 'styles', 'className', 'onResetBtnClick']);
+      value = _ref.color,
+      rest = _objectWithoutProperties(_ref, ['onChange', 'onSwatchHover', 'hex', 'colors', 'width', 'triangle', 'styles', 'className', 'onResetBtnClick', 'color']);
 
   var transparent = hex === 'transparent';
   var handleChange = function handleChange(hexCode, e) {
@@ -80,7 +81,7 @@ var Block = function Block(_ref) {
         padding: '0 7px',
         boxSizing: 'border-box'
       },
-      noBackground: {
+      noBackgroundHead: {
         height: '110px',
         background: '#fff',
         borderRadius: '6px 6px 0 0',
@@ -102,13 +103,22 @@ var Block = function Block(_ref) {
     }
   }, passedStyles), { 'hide-triangle': triangle === 'hide' });
 
-  console.log({ hex: hex, rest: rest });
+  console.log({ hex: hex, value: value, rest: rest });
 
   return React.createElement(
     'div',
     { style: styles.card, className: 'block-picker ' + className },
     React.createElement('div', { style: styles.triangle }),
-    React.createElement(
+    value === 'no background' ? React.createElement(
+      'div',
+      { style: styles.noBackgroundHead },
+      transparent && React.createElement(Checkboard, { borderRadius: '6px 6px 0 0' }),
+      React.createElement(
+        'div',
+        { style: styles.noBackgroundlabel },
+        value
+      )
+    ) : React.createElement(
       'div',
       { style: styles.head },
       transparent && React.createElement(Checkboard, { borderRadius: '6px 6px 0 0' }),

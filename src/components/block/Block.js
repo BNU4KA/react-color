@@ -8,7 +8,7 @@ import { ColorWrap, EditableInput, Checkboard } from '../common'
 import BlockSwatches from './BlockSwatches'
 
 export const Block = ({ onChange, onSwatchHover, hex, colors, width, triangle,
-  styles: passedStyles = {}, className = '', onResetBtnClick, ...rest }) => {
+  styles: passedStyles = {}, className = '', onResetBtnClick, color: value, ...rest }) => {
   const transparent = hex === 'transparent'
   const handleChange = (hexCode, e) => {
     color.isValidHex(hexCode) && onChange({
@@ -66,7 +66,7 @@ export const Block = ({ onChange, onSwatchHover, hex, colors, width, triangle,
         padding: '0 7px',
         boxSizing: 'border-box',
       },
-      noBackground: {
+      noBackgroundHead: {
         height: '110px',
         background: '#fff',
         borderRadius: '6px 6px 0 0',
@@ -88,20 +88,32 @@ export const Block = ({ onChange, onSwatchHover, hex, colors, width, triangle,
     },
   }, passedStyles), { 'hide-triangle': triangle === 'hide' })
 
-  console.log({ hex, rest })
+  console.log({ hex, value, rest })
 
   return (
     <div style={ styles.card } className={ `block-picker ${ className }` }>
       <div style={ styles.triangle } />
 
-      <div style={ styles.head }>
-        { transparent && (
-          <Checkboard borderRadius="6px 6px 0 0" />
-        ) }
-        <div style={ styles.label }>
-          { hex }
+      {value === 'no background' ? (
+        <div style={ styles.noBackgroundHead }>
+          { transparent && (
+            <Checkboard borderRadius="6px 6px 0 0" />
+          ) }
+          <div style={ styles.noBackgroundlabel }>
+            { value }
+          </div>
         </div>
-      </div>
+      ) : (
+        <div style={ styles.head }>
+          { transparent && (
+            <Checkboard borderRadius="6px 6px 0 0" />
+          ) }
+          <div style={ styles.label }>
+            { hex }
+          </div>
+        </div>
+      )}
+
 
       <div style={ styles.body }>
         <BlockSwatches colors={ colors } onClick={ handleChange } onSwatchHover={ onSwatchHover } onResetBtnClick={ onResetBtnClick } />
