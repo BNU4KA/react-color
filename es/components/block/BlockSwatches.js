@@ -51,7 +51,7 @@ export var BlockSwatches = function BlockSwatches(_ref) {
       'div',
       { onClick: function onClick() {
           return onResetBtnClick();
-        }, style: _extends({}, styles.swatches, { cursor: 'pointer', marginBottom: '5px' }) },
+        }, style: _extends({}, styles.swatches, { cursor: 'pointer', marginBottom: '5px', borderRadius: '4px' }) },
       React.createElement(
         'svg',
         { width: '15', height: '15', viewBox: '0 0 38 38', fill: 'none', xmlns: 'http://www.w3.org/2000/svg' },
